@@ -202,21 +202,74 @@ export default function Page() {
       {/* RELATED */}
       <div style={{ background:"#fff", padding:"1.5rem", borderRadius:"10px", marginBottom:"1.5rem" }}>
         <h2>Related Tools</h2>
-        <ul>
-          <li onClick={()=>window.location.href="https://creditcarddebtpayoffcalculator.com"}>Credit Card Debt Payoff Calculator</li>
-          <li onClick={()=>window.location.href="https://debtreducingcalculator.com"}>Debt Reducing Calculator</li>
-          <li onClick={()=>window.location.href="https://emailattachmentsize.com"}>Email Attachment Size Checker</li>
-          <li onClick={()=>window.location.href="https://youtubetitlechecker.com"}>YouTube Title Checker</li>
-        </ul>
+  <ul>
+    <li onClick={() => window.location.href = "https://creditcarddebtpayoffcalculator.com"} style={{ cursor: "pointer", textDecoration: "underline" }}>
+      Credit Card Debt Payoff Calculator
+    </li>
+    <li onClick={() => window.location.href = "https://debtreducingcalculator.com"} style={{ cursor: "pointer", textDecoration: "underline" }}>
+      Debt Reducing Calculator
+    </li>
+    <li onClick={() => window.location.href = "https://sidehustletaxestimator.com"} style={{ cursor: "pointer", textDecoration: "underline" }}>
+      Side Hustle Tax Estimator
+    </li>
+    <li onClick={() => window.location.href = "https://highyieldsavingscalculator.com"} style={{ cursor: "pointer", textDecoration: "underline" }}>
+      High Yield Savings Calculator
+    </li>
+    <li onClick={() => window.location.href = "https://retirementsavingsgap.com"} style={{ cursor: "pointer", textDecoration: "underline" }}>
+      Retirement Savings Gap
+    </li>
+    <li onClick={() => window.location.href = "https://lifeinsurancecoveragecalculator.com"} style={{ cursor: "pointer", textDecoration: "underline" }}>
+      Life Insurance Coverage Calculator
+    </li>
+    <li onClick={() => window.location.href = "https://onlinecourseroi.com"} style={{ cursor: "pointer", textDecoration: "underline" }}>
+      Online Course ROI Calculator
+    </li>
+    <li onClick={() => window.location.href = "https://mysubscriptioncost.com"} style={{ cursor: "pointer", textDecoration: "underline" }}>
+      Subscription Cost Calculator
+    </li>
+    <li onClick={() => window.location.href = "https://emailattachmentsize.com"} style={{ cursor: "pointer", textDecoration: "underline" }}>
+      Email Attachment Size Checker
+    </li>
+    <li onClick={() => window.location.href = "https://gpacalculator.site"} style={{ cursor: "pointer", textDecoration: "underline" }}>
+      GPA Calculator
+    </li>
+    <li onClick={() => window.location.href = "https://youtubetitlechecker.com"} style={{ cursor: "pointer", textDecoration: "underline" }}>
+      YouTube Title Checker
+    </li>
+    <li onClick={() => window.location.href = "https://strongpasswordbuilder.com"} style={{ cursor: "pointer", textDecoration: "underline" }}>
+      Strong Password Builder
+    </li>
+    <li onClick={() => window.location.href = "https://coolusernamegenerator.com"} style={{ cursor: "pointer", textDecoration: "underline" }}>
+      Cool Username Generator
+    </li>
+  </ul>
+</div>
       </div>
 
-      {/* FOOTER */}
-      <div>
-        <span onClick={()=>window.location.href="/privacy"}>Privacy Policy</span> |{" "}
-        <span onClick={()=>window.location.href="/terms"}>Terms</span>
+      <div style={{ marginTop: "1rem", fontSize: "13px", color: "#666" }}>
+        This tool provides estimates for informational purposes only.
+      </div>
+
+      <div style={{ marginTop: "1.5rem", fontSize: "13px", color: "#555" }}>
+        This site may use cookies and analytics. By using this site,
+        you agree to our Privacy Policy and Terms of Service.
+      </div>
+
+      <div style={{
+        marginTop: "1rem",
+        paddingTop: "1rem",
+        borderTop: "1px solid #e2e8f0",
+        fontSize: "14px"
+      }}>
+        <span onClick={() => window.location.href = "/privacy"} style={{ cursor: "pointer", textDecoration: "underline" }}>
+          Privacy Policy
+        </span>
+        {" | "}
+        <span onClick={() => window.location.href = "/terms"} style={{ cursor: "pointer", textDecoration: "underline" }}>
+          Terms of Service
+        </span>
       </div>
 
     </main>
   )
 }
-
