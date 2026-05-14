@@ -106,10 +106,54 @@ export default function Page() {
       <div style={{ background:"#fff", padding:"1.5rem", borderRadius:"10px", marginBottom:"1.5rem" }}>
         <h2>How This Works</h2>
         <p>
-          This calculator averages your grades using credit weighting to determine your GPA. It also allows you to project future outcomes by calculating what GPA you need in upcoming courses to reach a target.
+          This calculator converts each grade into a numeric value, multiplies it by the number of credits for that course, and averages the results to determine your GPA.
         </p>
+      </div>
+
+      {/* NEW: VISUAL EXPLANATION */}
+      <div style={{ background:"#fff", padding:"1.5rem", borderRadius:"10px", marginBottom:"1.5rem" }}>
+        <h2>How GPA Is Calculated</h2>
+
         <p>
-          By combining current performance with future goals, you can better plan how to improve or maintain your academic standing.
+          GPA is calculated using a weighted average based on your grades and course credits.
+        </p>
+
+        <p>
+          The formula is:
+        </p>
+
+        <p><strong>Total Grade Points ÷ Total Credits = GPA</strong></p>
+
+        <table style={{ width:"100%", borderCollapse:"collapse", marginTop:"1rem" }}>
+          <thead>
+            <tr>
+              <th style={{ border:"1px solid #ccc", padding:"8px" }}>Course</th>
+              <th style={{ border:"1px solid #ccc", padding:"8px" }}>Grade</th>
+              <th style={{ border:"1px solid #ccc", padding:"8px" }}>Points</th>
+              <th style={{ border:"1px solid #ccc", padding:"8px" }}>Credits</th>
+              <th style={{ border:"1px solid #ccc", padding:"8px" }}>Total</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td style={{ border:"1px solid #ccc", padding:"8px" }}>Math</td>
+              <td style={{ border:"1px solid #ccc", padding:"8px" }}>A</td>
+              <td style={{ border:"1px solid #ccc", padding:"8px" }}>4.0</td>
+              <td style={{ border:"1px solid #ccc", padding:"8px" }}>3</td>
+              <td style={{ border:"1px solid #ccc", padding:"8px" }}>12.0</td>
+            </tr>
+            <tr>
+              <td style={{ border:"1px solid #ccc", padding:"8px" }}>English</td>
+              <td style={{ border:"1px solid #ccc", padding:"8px" }}>B+</td>
+              <td style={{ border:"1px solid #ccc", padding:"8px" }}>3.3</td>
+              <td style={{ border:"1px solid #ccc", padding:"8px" }}>3</td>
+              <td style={{ border:"1px solid #ccc", padding:"8px" }}>9.9</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <p style={{ marginTop:"1rem" }}>
+          Courses with more credits have a larger impact on your GPA, so performance in those classes matters more.
         </p>
       </div>
 
@@ -117,41 +161,37 @@ export default function Page() {
       <div style={{ background:"#fff", padding:"1.5rem", borderRadius:"10px", marginBottom:"1.5rem" }}>
         <h2>Why This Is Useful</h2>
         <p>
-          GPA impacts scholarships, academic standing, and career opportunities. This tool helps you move beyond simply calculating GPA and instead focus on improving it.
-        </p>
-        <p>
-          Knowing what grades you need can help you prioritize effort and make smarter academic decisions.
+          GPA influences scholarships, academic standing, and future opportunities. This tool helps you not only calculate GPA but plan how to improve it.
         </p>
       </div>
 
-      {/* IF WEAK */}
+      {/* IMPROVEMENT */}
       <div style={{ background:"#fff", padding:"1.5rem", borderRadius:"10px", marginBottom:"1.5rem" }}>
         <h2>If You’re Not Getting the Results You Want</h2>
         <ul>
-          <li>Increase focus on high-credit courses</li>
-          <li>Retake low-grade classes if possible</li>
-          <li>Adjust course load for better performance</li>
-          <li>Seek tutoring or additional support</li>
+          <li>Focus on high-credit courses</li>
+          <li>Retake lower grades if possible</li>
+          <li>Adjust course load</li>
         </ul>
       </div>
 
-      {/* OTHER METHODS */}
+      {/* OTHER */}
       <div style={{ background:"#fff", padding:"1.5rem", borderRadius:"10px", marginBottom:"1.5rem" }}>
-        <h2>Other Successful Approaches</h2>
+        <h2>Other Useful GPA Strategies</h2>
         <ul>
-          <li>Focus on GPA-heavy semesters</li>
-          <li>Strategic course selection</li>
-          <li>Balancing workload difficulty</li>
+          <li>Plan future semesters strategically</li>
+          <li>Balance difficult and easier classes</li>
+          <li>Track progress regularly</li>
         </ul>
       </div>
 
-      {/* PLANNING */}
+      {/* PLAN */}
       <div style={{ background:"#fff", padding:"1.5rem", borderRadius:"10px", marginBottom:"1.5rem" }}>
         <h2>How to Plan Ahead</h2>
         <ul>
-          <li>Track GPA regularly</li>
-          <li>Set clear academic goals</li>
-          <li>Balance course difficulty</li>
+          <li>Set GPA goals early</li>
+          <li>Monitor results after each term</li>
+          <li>Adjust study effort accordingly</li>
         </ul>
       </div>
 
@@ -161,12 +201,8 @@ export default function Page() {
         <ul>
           <li onClick={()=>window.location.href="https://creditcarddebtpayoffcalculator.com"}>Credit Card Debt Payoff Calculator</li>
           <li onClick={()=>window.location.href="https://debtreducingcalculator.com"}>Debt Reducing Calculator</li>
-          <li onClick={()=>window.location.href="https://sidehustletaxestimator.com"}>Side Hustle Tax Estimator</li>
-          <li onClick={()=>window.location.href="https://highyieldsavingscalculator.com"}>High Yield Savings Calculator</li>
           <li onClick={()=>window.location.href="https://emailattachmentsize.com"}>Email Attachment Size Checker</li>
           <li onClick={()=>window.location.href="https://youtubetitlechecker.com"}>YouTube Title Checker</li>
-          <li onClick={()=>window.location.href="https://strongpasswordbuilder.com"}>Strong Password Builder</li>
-          <li onClick={()=>window.location.href="https://coolusernamegenerator.com"}>Cool Username Generator</li>
         </ul>
       </div>
 
@@ -179,3 +215,4 @@ export default function Page() {
     </main>
   )
 }
+
