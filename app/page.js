@@ -66,6 +66,10 @@ export default function Page() {
         <h1>GPA Calculator</h1>
 
         <h3>Current GPA</h3>
+<div style={{ display: "flex", gap: "10px", marginBottom: "8px" }}>
+  <div style={{ width: "80px", fontWeight: "bold" }}>Grade</div>
+  <div style={{ fontWeight: "bold" }}>Credits</div>
+</div>
         {courses.map((c, i) => (
           <div key={i} style={{ marginBottom:"1rem" }}>
             <select value={c.grade} onChange={(e)=>updateCourse(i,"grade",e.target.value)}>
