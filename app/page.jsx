@@ -131,8 +131,6 @@ const STANDINGS = [
   { range: "Below 2.0",  label: "Academic Risk",    body: "Below the minimum GPA required to graduate at most schools. May trigger academic probation depending on institution policy." },
 ]
 
-import { RELATED_LINKS as RELATED } from "./lib/links"
-
 function getStanding(gpa) {
   if (gpa >= 3.9)  return { label: "Summa Cum Laude", color: "#1d4ed8", cls: "honor" }
   if (gpa >= 3.7)  return { label: "Magna Cum Laude", color: "#1d4ed8", cls: "honor" }
