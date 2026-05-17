@@ -200,7 +200,7 @@ export default function Page() {
 else if (needed < 0) targetMsg = "Your current GPA already exceeds " + tg.toFixed(2) + " — you're on track."
       else {
         const close = GRADES.reduce((prev, g) => Math.abs(g.points - needed) < Math.abs(prev.points - needed) ? g : prev)
-        targetMsg = `You need approximately a ${needed.toFixed(2)} GPA (roughly ${close.letter} average) in your next ${tc} credits to reach a ${tg.toFixed(2)} cumulative GPA.`
+        targetMsg = "You need approximately a " + needed.toFixed(2) + " GPA (roughly " + close.letter + " average) in your next " + tc + " credits to reach a " + tg.toFixed(2) + " cumulative GPA."
       }
     }
   }
