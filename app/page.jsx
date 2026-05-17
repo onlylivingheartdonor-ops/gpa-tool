@@ -102,21 +102,6 @@ const css = `
     .gpa-course-row > *:nth-child(4) { display: none; }
     .gpa-result-row, .gpa-standing-grid, .gpa-info-grid, .gpa-tip-grid { grid-template-columns: 1fr; }
   }
-  @media (max-width: 600px) {
-    .gpa-course-header, .gpa-course-row { grid-template-columns: 2fr 1fr 1fr 28px; }
-    .gpa-course-header .gpa-col-label:nth-child(4),
-    .gpa-course-row > *:nth-child(4) { display: none; }
-    .gpa-result-row, .gpa-standing-grid, .gpa-info-grid, .gpa-tip-grid { grid-template-columns: 1fr; }
-  }
-  .dr-card { background: #fff; border: 1px solid #e0dbd3; border-radius: 4px; padding: 1.5rem; margin-bottom: 1.5rem; }
-  .dr-section-title { font-family: 'DM Serif Display', serif; font-size: 1.2rem; margin-bottom: 1rem; color: #1a1a1a; }
-  .dr-related-links { display: flex; flex-wrap: wrap; gap: .5rem; margin-bottom: 1rem; }
-  .dr-related-link { display: inline-block; padding: .3rem .75rem; border: 1px solid #1d4ed8; border-radius: 999px; font-size: 12px; color: #1d4ed8; text-decoration: none; transition: background .15s, color .15s; }
-  .dr-related-link:hover { background: #1d4ed8; color: #fff; }
-  .dr-disclaimer { font-size: 11px; color: #888; line-height: 1.6; }
-  .dr-footer-links { display: flex; gap: 1rem; margin-top: .5rem; }
-  .dr-footer-links a { color: #888; text-decoration: underline; font-size: 11px; }
-`
 `
 
 const GRADES = [
@@ -167,7 +152,7 @@ export default function Page() {
   const [courses, setCourses] = useState([
     { id: 1, name: "", grade: "", credits: "" },
   ])
-  const [targetGPA, setTargetGPA]       = useState("")
+  const [targetGPA, setTargetGPA]         = useState("")
   const [targetCredits, setTargetCredits] = useState("")
 
   const addCourse = () => {
@@ -183,22 +168,22 @@ export default function Page() {
     setCourses(prev => prev.map(c => c.id === id ? { ...c, [field]: value } : c))
   }
 
-  // Live calculation — no button needed
   const valid = courses.filter(c => c.grade && GRADE_MAP[c.grade] !== undefined && parseFloat(c.credits) > 0)
   const totalCredits = valid.reduce((s, c) => s + parseFloat(c.credits), 0)
   const totalPoints  = valid.reduce((s, c) => s + GRADE_MAP[c.grade] * parseFloat(c.credits), 0)
   const gpa = totalCredits > 0 ? totalPoints / totalCredits : null
   const standing = gpa !== null ? getStanding(gpa) : null
 
-  // Target GPA: what GPA do I need in remaining credits?
   let targetMsg = ""
   if (gpa !== null && targetGPA && targetCredits) {
     const tg = parseFloat(targetGPA), tc = parseFloat(targetCredits)
     if (tg >= 0 && tg <= 4 && tc > 0) {
       const needed = ((tg * (totalCredits + tc)) - totalPoints) / tc
-      if (needed > 4.0) targetMsg = "You would need above a 4.0 in those " + tc + " credits — not achievable with standard grading."
-else if (needed < 0) targetMsg = "Your current GPA already exceeds " + tg.toFixed(2) + " — you're on track."
-      else {
+      if (needed > 4.0) {
+        targetMsg = "You would need above a 4.0 in those " + tc + " credits — not achievable with standard grading."
+      } else if (needed < 0) {
+        targetMsg = "Your current GPA already exceeds " + tg.toFixed(2) + " — you're on track."
+      } else {
         const close = GRADES.reduce((prev, g) => Math.abs(g.points - needed) < Math.abs(prev.points - needed) ? g : prev)
         targetMsg = "You need approximately a " + needed.toFixed(2) + " GPA (roughly " + close.letter + " average) in your next " + tc + " credits to reach a " + tg.toFixed(2) + " cumulative GPA."
       }
@@ -266,7 +251,7 @@ else if (needed < 0) targetMsg = "Your current GPA already exceeds " + tg.toFixe
             <>
               <div className="gpa-result-hero">
                 <p className="gpa-result-label">Cumulative GPA</p>
-                <p className={`gpa-result-gpa ${standing.cls}`}>{gpa.toFixed(2)}</p>
+                <p className={"gpa-result-gpa " + standing.cls}>{gpa.toFixed(2)}</p>
                 <p className="gpa-result-standing">Academic standing: <span>{standing.label}</span></p>
               </div>
 
@@ -294,7 +279,7 @@ else if (needed < 0) targetMsg = "Your current GPA already exceeds " + tg.toFixe
                       const barPct = Math.round(pts / 4.0 * 100)
                       return (
                         <div className="gpa-breakdown-row" key={c.id}>
-                          <span className="gpa-breakdown-name">{c.name || `Course ${i + 1}`}</span>
+                          <span className="gpa-breakdown-name">{c.name || "Course " + (i + 1)}</span>
                           <span className="gpa-breakdown-grade" style={{ color: gradeColor(pts) }}>{c.grade}</span>
                           <div className="gpa-breakdown-bar-wrap">
                             <div className="gpa-breakdown-bar" style={{ width: barPct + "%", background: gradeColor(pts) }} />
