@@ -102,6 +102,21 @@ const css = `
     .gpa-course-row > *:nth-child(4) { display: none; }
     .gpa-result-row, .gpa-standing-grid, .gpa-info-grid, .gpa-tip-grid { grid-template-columns: 1fr; }
   }
+  @media (max-width: 600px) {
+    .gpa-course-header, .gpa-course-row { grid-template-columns: 2fr 1fr 1fr 28px; }
+    .gpa-course-header .gpa-col-label:nth-child(4),
+    .gpa-course-row > *:nth-child(4) { display: none; }
+    .gpa-result-row, .gpa-standing-grid, .gpa-info-grid, .gpa-tip-grid { grid-template-columns: 1fr; }
+  }
+  .dr-card { background: #fff; border: 1px solid #e0dbd3; border-radius: 4px; padding: 1.5rem; margin-bottom: 1.5rem; }
+  .dr-section-title { font-family: 'DM Serif Display', serif; font-size: 1.2rem; margin-bottom: 1rem; color: #1a1a1a; }
+  .dr-related-links { display: flex; flex-wrap: wrap; gap: .5rem; margin-bottom: 1rem; }
+  .dr-related-link { display: inline-block; padding: .3rem .75rem; border: 1px solid #1d4ed8; border-radius: 999px; font-size: 12px; color: #1d4ed8; text-decoration: none; transition: background .15s, color .15s; }
+  .dr-related-link:hover { background: #1d4ed8; color: #fff; }
+  .dr-disclaimer { font-size: 11px; color: #888; line-height: 1.6; }
+  .dr-footer-links { display: flex; gap: 1rem; margin-top: .5rem; }
+  .dr-footer-links a { color: #888; text-decoration: underline; font-size: 11px; }
+`
 `
 
 const GRADES = [
@@ -429,24 +444,22 @@ export default function Page() {
         {/* ========== MONEYWISE LINK — END ========== */}
 
         {/* RELATED */}
-        <div className="dr-card">
-          <p className="dr-section-title">Related tools</p>
-          <div className="dr-related-links">
+        <div className="gpa-card">
+          <p className="gpa-section-title">Related tools</p>
+          <div className="gpa-related-links">
             {RELATED.map((r, i) => (
-              <a key={i} className="dr-related-link" href={r.href}>{r.label}</a>
+              <a key={i} className="gpa-related-link" href={r.href}>{r.label}</a>
             ))}
           </div>
-          <div className="dr-disclaimer">
+          <div className="gpa-disclaimer">
             This tool provides estimates for informational purposes only and does not constitute financial advice. Results assume a fixed interest rate and fixed monthly payment for the full repayment period. This site may use cookies and analytics. By using this site, you agree to our Privacy Policy and Terms of Service.
-            <div className="dr-footer-links">
+            <div className="gpa-footer-links">
               <a href="/privacy">Privacy Policy</a>
               <a href="/terms">Terms of Service</a>
             </div>
           </div>
         </div>
-
       </main>
     </>
   )
 }
-
