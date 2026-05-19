@@ -13,7 +13,7 @@ export const metadata = {
     siteName: "Moneywise Calculators",             // ← Change
     images: [
       {
-        url: "https://https://https:/https://www.my-gpacalculator.com/og-image.png", // ← MUST CHANGE
+        url: "https://www.my-gpacalculator.com/og-image.png", // ← MUST CHANGE
         width: 1200,
         height: 630,
         alt: "GPA Calculator",
