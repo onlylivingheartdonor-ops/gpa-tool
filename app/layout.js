@@ -1,22 +1,22 @@
 export const metadata = {
-  title: "GPA Calculator | Calculate Grade Point Average by Credits",
-  description: "Quickly calculate your GPA using letter grades and credit hours. Determine what grades you need in the future to improve your GPA.",
-  
+  title: "GPA Calculator | Calculate Your Grade Point Average by Credits",
+  description: "Calculate your cumulative GPA using letter grades and credit hours. See course breakdown, academic standing, and what grades you need to reach your target GPA.",
+
   alternates: {
-    canonical: "https://www.my-gpacalculator.com",           // ← MUST CHANGE
+    canonical: "https://www.my-gpacalculator.com",
   },
 
   openGraph: {
-    title: "GPA Calculator | Calculate Grade Point Average by Credits",
-    description: "Quickly calculate your GPA using letter grades and credit hours. Determine what grades you need in the future to improve your GPA.",
-    url: "https://www.my-gpacalculator.com",                 // ← MUST CHANGE
-    siteName: "Moneywise Calculators",             // ← Change
+    title: "GPA Calculator | Calculate Your Grade Point Average by Credits",
+    description: "Calculate your cumulative GPA using letter grades and credit hours. See course breakdown, academic standing, and what grades you need to reach your target GPA.",
+    url: "https://www.my-gpacalculator.com",
+    siteName: "MoneyWise Calculators",
     images: [
       {
-        url: "https://www.my-gpacalculator.com/og-image.png", // ← MUST CHANGE
+        url: "https://www.my-gpacalculator.com/og-image.png",
         width: 1200,
         height: 630,
-        alt: "GPA Calculator",
+        alt: "GPA Calculator — Calculate your grade point average",
       },
     ],
     locale: "en_US",
@@ -25,8 +25,8 @@ export const metadata = {
 
   twitter: {
     card: "summary_large_image",
-    title: "GPA Calculator | Calculate Grade Point Average by Credits",
-    description: "Quickly calculate your GPA using letter grades and credit hours. Determine what grades you need in the future to improve your GPA.",
+    title: "GPA Calculator | Calculate Your Grade Point Average by Credits",
+    description: "Calculate your cumulative GPA using letter grades and credit hours. See course breakdown and academic standing.",
   },
 
   robots: {
@@ -46,13 +46,7 @@ export const metadata = {
     apple: "/apple-touch-icon.png",
   },
 
-  viewport: {
-    width: "device-width",
-    initialScale: 1,
-    maximumScale: 5,
-  },
-
-  authors: [{name: "David Graham" }],
+  authors: [{ name: "David Graham" }],
   creator: "MoneyWise Calculators",
   publisher: "MoneyWise Calculators",
 };
@@ -61,28 +55,37 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <head>
-        {/* AdSense */}
         <script
           async
           src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3475627763908800"
           crossOrigin="anonymous"
         ></script>
-              <script
+        <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
             __html: JSON.stringify({
               "@context": "https://schema.org",
               "@type": "WebApplication",
-              name: "gpa-tool",
-              description: "Financial calculator tool",
-              url: "https://www.gpa-tool.com",
-              applicationCategory: "Finance",
+              name: "GPA Calculator",
+              description: "Free tool to calculate your cumulative GPA using letter grades and credit hours. See course breakdown, academic standing, and target GPA planning.",
+              url: "https://www.my-gpacalculator.com",
+              applicationCategory: "EducationApplication",
               operatingSystem: "All",
-              offers: { "@type": "Offer", price: "0", priceCurrency: "USD" }
+              browserRequirements: "Requires JavaScript",
+              offers: {
+                "@type": "Offer",
+                price: "0",
+                priceCurrency: "USD"
+              },
+              author: {
+                "@type": "Organization",
+                name: "MoneyWise Calculators",
+                url: "https://moneywisecalculator.com"
+              }
             }),
           }}
         />
-    </head>
+      </head>
       <body>{children}</body>
     </html>
   );
